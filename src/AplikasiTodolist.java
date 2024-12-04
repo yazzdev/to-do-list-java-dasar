@@ -3,7 +3,7 @@ public class AplikasiTodolist {
   public static String[] model = new String[10];
 
   public static void main(String[] args) {
-
+    testShowTodoList();
   }
 
   /**
@@ -20,6 +20,13 @@ public class AplikasiTodolist {
         System.out.println(no + ". " + todo);
       }
     }
+  }
+
+  private static void testShowTodoList() {
+    model[0] = "Belajar Java Dasar";
+    model[1] = "Studi Kasus Java Dasar: Todolist";
+
+    showTodoList();
   }
 
   // Menambahkan todo ke list
