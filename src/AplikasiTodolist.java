@@ -136,7 +136,26 @@ public class AplikasiTodolist {
 
   // View menampilkan todo list
   public static void viewShowTodoList() {
+    while (true) {
+      showTodoList();
 
+      System.out.println("Menu");
+      System.out.println("1. Tambah");
+      System.out.println("2. Hapus");
+      System.out.println("x. Keluar");
+
+      var input = input("Pilih");
+
+      if (input.equals("1")) {
+        viewAddTodoList();
+      } else if (input.equals("2")) {
+        viewRemoveTodoList();
+      } else if (input.equals("x")) {
+        break;
+      } else {
+        System.out.println("Pilihan tidak sesuai");
+      }
+    }
   }
 
   // View menambahkan todo ke list
