@@ -22,7 +22,7 @@ public class AplikasiTodolist {
     }
   }
 
-  private static void testShowTodoList() {
+  static void testShowTodoList() {
     model[0] = "Belajar Java Dasar";
     model[1] = "Studi Kasus Java Dasar: Todolist";
 
@@ -30,7 +30,34 @@ public class AplikasiTodolist {
   }
 
   // Menambahkan todo ke list
-  public static void addTodoList() {
+  public static void addTodoList(String todo) {
+    // Cek apakah model penuh?
+    var isFull = true;
+    for (var i = 0; i < model.length; i++) {
+      if (model[i]== null){
+        // Model masih ada yang kosong
+        isFull = false;
+        break;
+      }
+    }
+
+    // Jika penuh, resize ukuran array menjadi 2x lipat
+    if (isFull){
+      var temp = model;
+      model = new String[model.length * 2];
+
+      for (var i = 0; i < temp.length; i++) {
+        model[i] = temp[i];
+      }
+    }
+
+    // Tambahkan  ke posisi yang data array nya kosong/NULL
+    for (var i = 0; i < model.length; i++) {
+      if (model[i] == null) {
+        model[i] = todo;
+        break;
+      }
+    }
 
   }
 
