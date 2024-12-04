@@ -3,7 +3,7 @@ public class AplikasiTodolist {
   public static String[] model = new String[10];
 
   public static void main(String[] args) {
-    testShowTodoList();
+    testAddTodoList();
   }
 
   /**
@@ -34,7 +34,7 @@ public class AplikasiTodolist {
     // Cek apakah model penuh?
     var isFull = true;
     for (var i = 0; i < model.length; i++) {
-      if (model[i]== null){
+      if (model[i] == null) {
         // Model masih ada yang kosong
         isFull = false;
         break;
@@ -42,7 +42,7 @@ public class AplikasiTodolist {
     }
 
     // Jika penuh, resize ukuran array menjadi 2x lipat
-    if (isFull){
+    if (isFull) {
       var temp = model;
       model = new String[model.length * 2];
 
@@ -58,7 +58,14 @@ public class AplikasiTodolist {
         break;
       }
     }
+  }
 
+  public static void testAddTodoList() {
+    for (var i = 0; i < 25; i++) {
+      addTodoList("Testing todo ke-" + i);
+    }
+
+    showTodoList();
   }
 
   // Menghapus todo dari list
