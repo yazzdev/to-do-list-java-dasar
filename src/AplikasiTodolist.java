@@ -6,7 +6,7 @@ public class AplikasiTodolist {
   public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
   public static void main(String[] args) {
-    testViewAddTodoList();
+    testViewRemoveTodoList();
   }
 
   /**
@@ -123,9 +123,9 @@ public class AplikasiTodolist {
     return data;
   }
 
-  public static void testInput(){
+  public static void testInput() {
     var name = input("Nama");
-    System.out.println("Hi "+ name);
+    System.out.println("Hi " + name);
 
     var workingIn = input("Working in");
     System.out.println(workingIn);
@@ -159,7 +159,7 @@ public class AplikasiTodolist {
     }
   }
 
-  public static void testViewShowTodoList(){
+  public static void testViewShowTodoList() {
     addTodoList("satu");
     addTodoList("dua");
     addTodoList("tiga");
@@ -171,18 +171,18 @@ public class AplikasiTodolist {
 
   // View menambahkan todo ke list
   public static void viewAddTodoList() {
-    System.out.println("ADD TODO");
+    System.out.println(">> ADD TODO <<");
 
     var todo = input("Todo (x for cancel)");
 
-    if (todo.equals("x")){
+    if (todo.equals("x")) {
       // batal
     } else {
       addTodoList(todo);
     }
   }
 
-  public static void testViewAddTodoList(){
+  public static void testViewAddTodoList() {
     addTodoList("satu");
     addTodoList("dua");
 
@@ -193,6 +193,29 @@ public class AplikasiTodolist {
 
   // View menghapus todo dari list
   public static void viewRemoveTodoList() {
+    System.out.println(">> REMOVE TODO <<");
 
+    var number = input("Todo (x for cancel)");
+
+    if (number.equals("x")) {
+      // batal
+    } else {
+      boolean success = removeTodoList(Integer.valueOf(number));
+      if (!success) {
+        System.out.println("Gagal menghapus todolist : " + number);
+      }
+    }
+  }
+
+  public static void testViewRemoveTodoList(){
+    addTodoList("satu");
+    addTodoList("dua");
+    addTodoList("tiga");
+
+    showTodoList();
+
+    viewRemoveTodoList();
+
+    showTodoList();
   }
 }
