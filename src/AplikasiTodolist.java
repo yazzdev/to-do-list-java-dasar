@@ -6,7 +6,7 @@ public class AplikasiTodolist {
   public static java.util.Scanner scanner = new java.util.Scanner(System.in);
 
   public static void main(String[] args) {
-    testViewRemoveTodoList();
+    viewShowTodoList();
   }
 
   /**
@@ -15,6 +15,7 @@ public class AplikasiTodolist {
 
   // Menampilkan todo list
   public static void showTodoList() {
+    System.out.println("----------------");
     System.out.println(">>> TODOLIST <<<");
     for (var i = 0; i < model.length; i++) {
       var todo = model[i];
